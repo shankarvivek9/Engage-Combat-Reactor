@@ -429,7 +429,7 @@ export default function App() {
   return (
     <div 
       id="main-applet-housing" 
-      className="min-h-screen bg-[#0a0a0c] text-white flex flex-col items-center justify-center p-3 sm:p-6 select-none font-sans antialiased relative overflow-hidden"
+      className="w-screen h-screen bg-[#0a0a0c] text-white flex flex-col select-none font-sans antialiased relative overflow-hidden p-0 m-0"
     >
       {/* Radial grid dot background overlay */}
       <div 
@@ -445,7 +445,7 @@ export default function App() {
       <div className="absolute bottom-[-10%] left-[-5%] w-[600px] h-[600px] bg-[#ff007a] rounded-full blur-[150px] opacity-[0.08] pointer-events-none" />
 
       {/* Play area container wrapper */}
-      <div className="w-full max-w-4xl flex flex-col gap-5 relative z-10">
+      <div className="w-full h-full flex flex-col relative z-10 overflow-hidden">
         
         {/* Dynamic Unlocked Achievement Alert Banner with sharp bold design */}
         <AnimatePresence>
@@ -473,23 +473,23 @@ export default function App() {
         </AnimatePresence>
 
         {/* Space header metadata dashboard */}
-        <header className="flex justify-between items-end px-1.5 pb-2 border-b border-white/10 z-10">
+        <header className="flex justify-between items-center px-4 py-3 border-b border-white/10 z-10 bg-black/40 backdrop-blur-sm shrink-0">
           <div className="flex flex-col text-left">
             <span className="text-[9px] tracking-[0.3em] text-[#00f3ff] font-extrabold uppercase leading-none">
               SYSTEM STATUS: OPERATIONAL
             </span>
-            <h1 className="text-3xl font-black tracking-tighter leading-none italic mt-1.5 uppercase">
+            <h1 className="text-2xl font-black tracking-tighter leading-none italic mt-1 uppercase">
               <span className="text-transparent" style={{ WebkitTextStroke: '1px #fff' }}>SPACE</span> SHIFT
             </h1>
           </div>
 
-          <div className="flex items-end gap-3 font-mono">
+          <div className="flex items-center gap-4 font-mono">
             {highScore > 0 && (
               <div className="text-[10px] text-right font-mono text-white/40 hidden sm:block leading-none">
-                <p className="uppercase tracking-[0.15em] font-bold mb-1">HIGH RECORD</p>
-                <p className="text-lg font-black tracking-tighter text-[#00f3ff] italic leading-none">
+                <span className="uppercase tracking-[0.15em] font-bold block mb-0.5">HIGH RECORD</span>
+                <span className="text-base font-black tracking-tighter text-[#00f3ff] italic block leading-none">
                   {highScore.toLocaleString()} PTS
-                </p>
+                </span>
               </div>
             )}
             
@@ -505,7 +505,7 @@ export default function App() {
         </header>
 
         {/* Game playfield visual element */}
-        <div id="core-interactive-panel" className="relative w-full rounded-none bg-black/40 border-2 border-white/10 overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.8)]">
+        <div id="core-interactive-panel" className="relative w-full flex-1 bg-black/45 overflow-hidden">
           
           <GameCanvas
             playerStats={playerStats}
@@ -545,10 +545,10 @@ export default function App() {
         </div>
 
         {/* Footer info panels */}
-        <footer className="px-1 py-1 flex flex-col sm:flex-row justify-between items-center gap-3 text-[10px] tracking-[0.1em] text-white/30 uppercase font-mono font-bold">
+        <footer className="px-4 py-2.5 flex flex-row justify-between items-center gap-3 text-[10px] tracking-[0.1em] text-white/30 uppercase font-mono font-bold shrink-0 bg-black/40 backdrop-blur-sm border-t border-white/10">
           <div className="flex items-center gap-2">
             <div className="w-1.5 h-1.5 bg-[#00f3ff] shadow-[0_0_8px_#00f3ff] animate-pulse" />
-            <span>PROJECT SHIFT MATRIX MATRIX_CORE_ACTIVE</span>
+            <span>PROJECT SHIFT MATRIX ACTIVE</span>
           </div>
           <div className="text-right flex items-center gap-4">
             <span>DRAG / MOUSE : STEER PATH</span>

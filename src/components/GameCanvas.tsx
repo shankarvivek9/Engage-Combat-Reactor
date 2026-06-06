@@ -1512,7 +1512,7 @@ export default function GameCanvas({
     <div
       ref={containerRef}
       id="game-canvas-housing"
-      className="relative w-full h-[360px] md:h-[500px] bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden cursor-crosshair select-none touch-none shadow-2xl shadow-indigo-950/20"
+      className="relative w-full h-full bg-slate-950 overflow-hidden cursor-crosshair select-none touch-none"
       onPointerMove={(e) => {
         // mouse coordinates
         if (!canvasRef.current) return;
@@ -1530,15 +1530,15 @@ export default function GameCanvas({
       {/* Floating Canvas Quick Controls indicators overlay */}
       <div 
         id="canvas-quick-alert" 
-        className="absolute bottom-4 left-4 p-2 bg-slate-900/80 backdrop-blur-md rounded-lg border border-slate-800 pointer-events-none text-[10px] font-mono text-slate-400 flex flex-col gap-1 select-none"
+        className="absolute bottom-4 left-4 p-3 bg-black/90 backdrop-blur-sm border border-white/10 pointer-events-none text-[10px] font-mono text-white/50 flex flex-col gap-1 select-none"
       >
-        <span className="flex items-center gap-1.5 font-medium text-cyan-400">
-          <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+        <span className="flex items-center gap-1.5 font-bold text-[#00f3ff]">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#00f3ff] animate-pulse" />
           PLAYFIELD ACTIVE
         </span>
-        <span>🎹 WASD / Arrows to Move</span>
-        <span>🖱️ Cursor Aims Autofire</span>
-        <span>🎮 Swipe/Drag on screen to fly directly</span>
+        <span>🎹 WASD / ARROWS : MOVE</span>
+        <span>🖱️ CURSOR : AIM AUTOFIRE</span>
+        <span>🎮 SWIPE / DRAG : STEER PATH</span>
       </div>
 
       {stateRef.current.activeBossId && (
