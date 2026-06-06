@@ -1,0 +1,6 @@
+{
+  "name": "Space Roguelite Survivor",
+  "description": "An engaging, high-performance web-based 2D space shooter rogue-lite with synthesized sound effects, upgrades, level drafting, achievement unlocks, and satisfying progression.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
